@@ -24,3 +24,6 @@ Pillow==4.2.1
 
 # Storage
 google-cloud-storage==1.2.0
+
+# Tables
+django-tables2==1.10.0

@@ -1,5 +1,6 @@
 """Utility functions for the events application."""
 
+from django.db import models
 from datetime import datetime, date
 from events.models import (
     Event,
@@ -7,7 +8,7 @@ from events.models import (
 )
 
 
-class GenericEvent:
+class GenericEvent(models.Model):
     """Object combining common attributes of Event and ThirdPartyEvent classes."""
 
     def __init__(self, name, absolute_url, location, start_date, end_date, series=None, third_party=False):

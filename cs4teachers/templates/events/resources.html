@@ -1,19 +1,10 @@
 {% extends "base.html" %}
 
+{% load render_table from django_tables2 %}
+
 {% block title %}Resources{% endblock title %}
 {% block page_heading %}Resources{% endblock page_heading %}
 
 {% block content %}
-  <ul>
-    {% for resource in resources %}
-      <li>
-        <h5>
-          <a href="{{ resource.url }}">{{ resource.name }}</a>
-        </h5>
-        {% if resource.description %}
-          <p>{{ resource.description }}</p>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+  {% render_table table %}
 {% endblock content %}

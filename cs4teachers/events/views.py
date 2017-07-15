@@ -2,6 +2,7 @@
 
 from django.views import generic
 from django.shortcuts import get_object_or_404
+import django_tables2 as tables
 from events.utils import retrieve_all_events
 from events.models import (
     Series,
@@ -11,6 +12,7 @@ from events.models import (
     ThirdPartyEvent,
     Resource,
 )
+from events.tables import ResourceTable
 
 
 class IndexView(generic.ListView):
@@ -127,10 +129,9 @@ class ThirdPartyEventView(generic.DetailView):
     context_object_name = "event"
 
 
-class ResourceList(generic.ListView):
+class ResourceList(tables.SingleTableView):
     """View for all resources."""
 
     model = Resource
-    ordering = "name"
-    context_object_name = "resources"
+    table_class = ResourceTable
     template_name = "events/resources.html"

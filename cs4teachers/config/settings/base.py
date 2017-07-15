@@ -38,6 +38,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "django_google_maps",
     "grappelli",
+    "django_tables2",
 ]
 
 # Apps specific for this project go here.
@@ -147,7 +148,6 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "config.context_processors.version_number.version_number",
-                "django.template.context_processors.request",
             ],
         },
     },
